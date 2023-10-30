@@ -28,7 +28,7 @@ namespace AlarmClockApp.Forms
 
         private void awakenButton_Click(object sender, EventArgs e)
         {
-            clkfrm.name("");
+            Model.AlarmOn = false;
             Close();
         }
     }
