@@ -46,6 +46,15 @@ namespace AlarmClockApp
 
         private void ClockTimer_Tick(object sender, EventArgs e)
         {
+            AlarmMode();
+            if (_model.AlarmOn)
+            {
+                Text = _initialText + "(будильник заведён)";
+            }
+            else
+            {
+                Text = _initialText;
+            }
             DisplayLabel.Text = _model.CurrentTime.ToString(@"hh\:mm\:ss");
 
             if (_model.AlarmUser())
@@ -81,5 +90,11 @@ namespace AlarmClockApp
             _model.AlarmOn = false;
             AlarmMode();
         }
+
+        public void name(string name)
+        {
+            this.Text = name;
+        }
+
     }
 }
