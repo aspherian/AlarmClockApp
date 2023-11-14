@@ -14,8 +14,7 @@ namespace AlarmClockApp.Forms
     public partial class Awake : Form
     {
         public AlarmSettingsModel Model { get; set; }
-        
-        ClockForm clkfrm = new ClockForm();
+       
         public Awake()
         {
             InitializeComponent();
@@ -29,6 +28,12 @@ namespace AlarmClockApp.Forms
         private void awakenButton_Click(object sender, EventArgs e)
         {
             Model.AlarmOn = false;
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Model.AlarmTime += TimeSpan.FromMinutes(5);
             Close();
         }
     }
